@@ -13,9 +13,9 @@ This repository contains an implementation of the Yolo object detection model's 
     - onnx model https://drive.google.com/file/d/1LpBmCS7WUSdrRZFHkiFfgmmsujzQInNO/view?usp=sharing
 - Put these model in `model` directory
 
-    ├── Lmodel/
-    |   ├── yolov8n.onnx
-    |   ├── yolov8n.pt
+        ├── Lmodel/
+        |   ├── yolov8n.onnx
+        |   ├── yolov8n.pt
 
 
 - run the code on CLI `uvicorn main:app --host 0.0.0.0 --port 7373 --reload`
@@ -32,10 +32,14 @@ This repository contains an implementation of the Yolo object detection model's 
             D:\YoloDemo\detect
 
     - if we use the **GPU cuda**, run
-            `docker run --gpus all -d  -p 7373:7373 -v local//output-detect:app/detect/ --name yolo_api_serve yolo_api`
+
+        `docker run --gpus all -d  -p 7373:7373 -v local//output-detect:app/detect/ --name yolo_api_serve yolo_api`
+
         - change the `local//output-detect` with our local output directory
-            e.g : 
+            e.g :
+
             `docker run --gpus all -d  -p 7373:7373 -v D:\YoloDemo\detect:app/detect/ --name yolo_api_serve yolo_api`
+
         - the output will using the internal docker path
             e.g:
 
@@ -44,8 +48,12 @@ This repository contains an implementation of the Yolo object detection model's 
                 }
         Then in our local device, output will save in `local output directory/2024-04-21-153032/meeting.jpg`
     - if we use the **CPU only**, then run
-            `docker run -d  -p 7373:7373 -v loca//output-detect:app/detect/ --name yolo_api_serve yolo_api`
+
+        `docker run -d  -p 7373:7373 -v loca//output-detect:app/detect/ --name yolo_api_serve yolo_api`
+
         - change the `local//output-detect` with our local output directory
+
             e.g : 
-                `docker run -d  -p 7373:7373 -v D:\YoloDemo\detect:app/detect/ --name yolo_api_serve yolo_api`  
+
+            `docker run -d  -p 7373:7373 -v D:\YoloDemo\detect:app/detect/ --name yolo_api_serve yolo_api`  
 
