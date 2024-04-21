@@ -42,6 +42,3 @@ RUN mkdir /detect
 
 
 CMD ["sh", "-c","uvicorn main:app --host 0.0.0.0 --port 7373 --reload"]
-
-# docker run --gpus 'device=2' -p 8262:8262 -p 8363:8363 api
-# docker run --gpus all -d  -p 8262:8262 -p 8363:8363 -v /home/cakra/data/cakra_demo/audio/meetha:/app/meetha --name stt_api_all_in stt_api_all
