@@ -2,5 +2,6 @@ ultralytics
 fastapi
 uvicorn
 python-multipart
+onnx
 onnxruntime
 onnxruntime-gpu

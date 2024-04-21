@@ -21,10 +21,10 @@ def predict_process(target):
         model_path = os.path.join(current_dir, 'model', "yolov8n.pt")
     else:
         model_path = os.path.join(current_dir, 'model', "yolov8n.onnx")
-    print(f"++++++++++++++++++{device}")
+    print(f"Prediction using {device}")
     predict = dt.now().strftime('%Y-%m-%d-%H%M%S')
     file_name = os.path.basename(target)
-    result_path = os.path.join(current_dir, 'coba', predict, file_name)
+    result_path = os.path.join(current_dir, 'detect', predict, file_name)
     model = YOLO(model_path)
     logger.info('Predict Process')
     results = model(target, task="detect", save=True, conf=0.5, project="detect", name=predict, device=device)
